@@ -14,6 +14,7 @@ import frc.robot.subsystems.photonVision;
 
 public class DriveBase extends SubsystemBase {
 
+  //allows us to use variables (turn and throttle) from there
   photonVision m_PhotonVision = new photonVision();
   
   /*Right side motors */
@@ -47,7 +48,8 @@ public class DriveBase extends SubsystemBase {
   }
 
   private void curvDrive() {
-   //set speed of motors to the imput of the controllersticks inside of photonVision
+   //set speed of motors to the input of the controllersticks inside of photonVision OR input from camera tracking
+   //This is how you use it for curvature drive specifically, though other methods are basically similar
     m_Drive.curvatureDrive(photonVision.Throttle, photonVision.Turn, true);
   }
 
